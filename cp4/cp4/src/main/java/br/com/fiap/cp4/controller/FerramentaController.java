@@ -3,7 +3,9 @@ package br.com.fiap.cp4.controller;
 
 
 import br.com.fiap.cp4.dto.Ferramenta.FerramentaDto;
+import br.com.fiap.cp4.dto.fornecedor.FornecedorDto;
 import br.com.fiap.cp4.model.entities.Ferramentas;
+import br.com.fiap.cp4.model.entities.Fornecedor;
 import br.com.fiap.cp4.service.FerramentaService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -45,6 +47,15 @@ public class FerramentaController {
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
         ferramentaService.deletar(id);
+    }
+
+    @PatchMapping("/{id}")
+    @Transactional
+    public Ferramentas atualizarParcial(@PathVariable Long id, @RequestBody FerramentaDto dto) {
+
+        return ferramentaService.atualizarFornecedorParcial(id, dto);
+
+
     }
 
 }

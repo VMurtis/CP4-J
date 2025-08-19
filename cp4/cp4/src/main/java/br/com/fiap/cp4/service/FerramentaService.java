@@ -2,10 +2,13 @@ package br.com.fiap.cp4.service;
 
 
 import br.com.fiap.cp4.dto.Ferramenta.FerramentaDto;
+import br.com.fiap.cp4.dto.fornecedor.FornecedorDto;
 import br.com.fiap.cp4.model.entities.Ferramentas;
+import br.com.fiap.cp4.model.entities.Fornecedor;
 import br.com.fiap.cp4.repository.FerramentaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -59,8 +62,22 @@ public class FerramentaService {
     }
 
 
+    @Transactional
+    public Ferramentas atualizarFornecedorParcial(Long id, FerramentaDto dto) {
+        Ferramentas ferramentaExistente = ferramentasRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Ferrameta não encontrada"));
+
+        Ferramentas ferramentaAtualizado = Ferramentas.builder()
+                .id(ferramentaExistente.getId())
+                .nome(dto.nome() != null ? dto.nome() : ferramentaExistente.getNome())
+                .cnpj(dto.tipo() != null ? dto.tipo() : ferramentaExistente.getTipo())
+                .email(dto.tamanho() != null ? dto.tamanho() : ferramentaExistente.getTamanho())
+                .telefone(dto.preco() != null ? dto.preco() : ferramentaExistente.getPreco())
+                .build();
 
 
+        return ferramentasRepository.saveAndFlush(ferramentaAtualizado);
+    }
 }
 
 
