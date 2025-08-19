@@ -14,24 +14,25 @@
 #### Body (JSON):
 
 ```json
+
 {
-  "nomeFerramenta": "Chave de Fenda",
-  "tipoFerramenta": "Manual",
-  "tamanhoFerramenta": "Pequeno",
-  "precoFerramenta": 25.90
+  "nome": "Chave de Fenda",
+  "tipo": "Manual",
+  "tamanho": "Pequeno",
+  "preco": 25.90
 },
 
 {
-  "nomeFerramenta": "Martelo",
-  "tipoFerramenta": "Manual",
-  "tamanhoFerramenta": "Médio",
-  "precoFerramenta": 45.00
+  "nome": "Martelo",
+  "tipo": "Manual",
+  "tamanho": "Médio",
+  "preco": 45.00
 },
 {
-  "nomeFerramenta": "Furadeira",
-  "tipoFerramenta": "Elétrica",
-  "tamanhoFerramenta": "Grande",
-  "precoFerramenta": 320.50
+  "nome": "Furadeira",
+  "tipo": "Elétrica",
+  "tamanho": "Grande",
+  "preco": 320.50
 }
 
 
@@ -50,10 +51,10 @@
 
 ```json
 {
-  "nomeFerramenta": "Chave de Fenda",
-  "tipoFerramenta": "Manual",
-  "tamanhoFerramenta": "Pequeno",
-  "precoFerramenta": 30.00
+  "nome": "Chave de Fenda",
+  "tipo": "Manual",
+  "tamanho": "Pequeno",
+  "preco": 30.00
 }
 
 ```
