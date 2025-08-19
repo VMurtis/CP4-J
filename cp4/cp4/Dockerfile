@@ -1,5 +1,5 @@
 # Usar OpenJDK 21 como base
-FROM openjdk:21-jdk-slim
+FROM openjdk:17-jdk-slim
 
 # Definir diretório de trabalho
 WORKDIR /app
