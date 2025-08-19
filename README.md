@@ -19,13 +19,28 @@
   "tipoFerramenta": "Manual",
   "tamanhoFerramenta": "Pequeno",
   "precoFerramenta": 25.90
+},
+
+{
+  "nomeFerramenta": "Martelo",
+  "tipoFerramenta": "Manual",
+  "tamanhoFerramenta": "Médio",
+  "precoFerramenta": 45.00
+},
+{
+  "nomeFerramenta": "Furadeira",
+  "tipoFerramenta": "Elétrica",
+  "tamanhoFerramenta": "Grande",
+  "precoFerramenta": 320.50
 }
+
+
 
 ```
 
 ###  Método
 
-- **Método:** `PUT`
+- **Método:** `PATCH`
 - **URL:**  
   `http://localhost:8081/ferramenta/{id}`
 
@@ -39,7 +54,7 @@
   "tipoFerramenta": "Manual",
   "tamanhoFerramenta": "Pequeno",
   "precoFerramenta": 30.00
-
+}
 
 ```
 
@@ -78,7 +93,23 @@
   "cnpj": "12345678000199",
   "email": "maxobra@empresa.com",
   "telefone": "(11) 99999-9999"
+},
+
+{
+  "nome": "Construtec",
+  "cnpj": "11222333000155",
+  "email": "contato@construtec.com",
+  "telefone": "(11) 98888-7777"
+},
+
+{
+  "nome": "ObraBase",
+  "cnpj": "99887766000144",
+  "email": "suporte@obrabase.com",
+  "telefone": "(21) 97777-6666"
 }
+
+
 
 
 ```
@@ -97,6 +128,17 @@
 {
   "email": "maxmail@empresa.com",
   "telefone": "(11) 98888-7777"
+}
+
+
+json
+{
+  "email": "outroemail@empresa.com"
+  
+}
+
+{
+  "telefone": "(11) 97777-3333"
 }
 
 ```
@@ -136,7 +178,23 @@
   "cpf": "12345678900",
   "email": "anaSilva@email.com",
   "telefone": "1178787878"
+},
+
+{
+  "nome": "Carlos Mendes",
+  "cpf": "98765432100",
+  "email": "carlos.mendes@email.com",
+  "telefone": "11999998888"
+},
+{
+  "nome": "Fernanda Oliveira",
+  "cpf": "45678912300",
+  "email": "fernanda.oliveira@email.com",
+  "telefone": "21988887777"
 }
+
+
+
 
 
 ```
@@ -154,6 +212,21 @@
 ```json
 {
   "email": "silvaAna@email.com"
+}
+
+{
+  "email": "oliveiraa.fernanda@email.com"
+}
+
+
+{
+  "telefone": "11911112222"
+}
+
+
+{
+  "nome": "Ana Maria Silva",
+  "email": "ana.maria@email.com"
 }
 
 
