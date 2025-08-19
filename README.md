@@ -64,6 +64,7 @@
 - **Método:** `GET`
 - **URL:**  
   `http://localhost:8081/ferramenta/{id}`
+  `http://localhost:8081/fornecedor/cnpj/{cnpj}`
 
 ---
 
@@ -238,6 +239,7 @@ json
 - **Método:** `GET`
 - **URL:**  
   `http://localhost:8081/cliente/{id}`
+  `http://localhost:8081/cliente/cpf/{cpf}`
 
 ---
 
