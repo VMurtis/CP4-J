@@ -9,6 +9,7 @@ import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -55,6 +56,15 @@ public class FornecedorController {
 
 
     }
+
+    @GetMapping("/cnpj/{cnpj}")
+    public ResponseEntity<Fornecedor> buscarPorCnpj(@PathVariable String cnpj) {
+        Fornecedor fornecedor = fornecedorService.buscarPorCnpj(cnpj);
+        return ResponseEntity.ok(fornecedor);
+    }
+
+
+
 
 
 }

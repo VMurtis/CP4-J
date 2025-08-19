@@ -10,7 +10,7 @@ import lombok.*;
 @Getter @Setter
 @Builder
 @Entity
-@Table(name = "TAB_FERRAMENTA")
+@Table(name = "TDS_TB_FERRAMENTA")
 @SequenceGenerator(name = "abrigo", sequenceName = "SQ_TAB_FERRAMENTA", allocationSize = 1)
 public class Ferramentas {
 
@@ -20,25 +20,25 @@ public class Ferramentas {
     private Long id;
 
     @Column(name = "nome_ferramenta")
-    private String Nome;
+    private String nome;
 
     @Column(name = "tipo_ferramenta")
-    private String Tipo;
+    private String tipo;
 
     @Column(name = "tamanho_ferramenta")
-    private String Tamanho;
+    private String tamanho;
 
     @Column(name = "preco_ferramenta")
-    private double Preco;
+    private double preco;
 
 
 
     public Ferramentas(FerramentaDto dto) {
         this.id = dto.id();
-        this.Nome = dto.nome();
-        this.Tipo = dto.tipo();
-        this.Tamanho = dto.tamanho();
-        this.Preco = dto.preco();
+        this.nome = dto.nome();
+        this.tipo = dto.tipo();
+        this.tamanho = dto.tamanho();
+        this.preco = dto.preco();
     }
 
 

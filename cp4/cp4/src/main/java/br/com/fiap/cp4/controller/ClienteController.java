@@ -10,6 +10,7 @@ import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -57,6 +58,13 @@ public class ClienteController {
 
 
     }
+
+    @GetMapping("/cpf/{cpf}")
+    public ResponseEntity<Cliente> buscarPorCpf(@PathVariable String cpf) {
+        Cliente cliente = clienteService.buscarPorCpf(cpf);
+        return ResponseEntity.ok(cliente);
+    }
+
 
 
 }

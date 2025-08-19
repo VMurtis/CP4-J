@@ -36,13 +36,13 @@ public class FerramentaService {
 
 
 
-    // Buscar por ID
+
     public Ferramentas buscarPorId(Long id) {
         return ferramentasRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Ferramenta não encontrada com ID: " + id));
     }
 
-    // Atualizar
+
     public Ferramentas update(Long id, FerramentaDto dto) {
         Ferramentas existente = buscarPorId(id);
         existente.setNome(dto.nome());
@@ -53,7 +53,7 @@ public class FerramentaService {
     }
 
 
-    // Deletar
+
     public void deletar(Long id) {
         if (!ferramentasRepository.existsById(id)) {
             throw new RuntimeException("Ferramenta não encontrada para exclusão com ID: " + id);
@@ -67,16 +67,15 @@ public class FerramentaService {
         Ferramentas ferramentaExistente = ferramentasRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Ferrameta não encontrada"));
 
-        Ferramentas ferramentaAtualizado = Ferramentas.builder()
+        Ferramentas ferramentaAtualizada = Ferramentas.builder()
                 .id(ferramentaExistente.getId())
                 .nome(dto.nome() != null ? dto.nome() : ferramentaExistente.getNome())
-                .cnpj(dto.tipo() != null ? dto.tipo() : ferramentaExistente.getTipo())
-                .email(dto.tamanho() != null ? dto.tamanho() : ferramentaExistente.getTamanho())
-                .telefone(dto.preco() != null ? dto.preco() : ferramentaExistente.getPreco())
+                .tipo(dto.tipo() != null ? dto.tipo() : ferramentaExistente.getTipo())
+                .tamanho(dto.tamanho() != null ? dto.tamanho() : ferramentaExistente.getTamanho())
+                .preco(dto.preco() != 0.0 ? dto.preco() : ferramentaExistente.getPreco())
                 .build();
 
-
-        return ferramentasRepository.saveAndFlush(ferramentaAtualizado);
+        return ferramentasRepository.saveAndFlush(ferramentaAtualizada);
     }
 }
 

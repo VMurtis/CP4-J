@@ -6,7 +6,7 @@ import jdk.jshell.Snippet;
 import lombok.*;
 
 @Entity
-@Table(name = "T_FORNECEDOR")
+@Table(name = "TDS_TB_FORNECEDOR")
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,16 +17,16 @@ public class Fornecedor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "nome_fornecedor", nullable = false, length = 100)
     private String nome;
 
-    @Column(nullable = false, unique = true, length = 14)
+    @Column(name = "cnpj_fornecedor",nullable = false, unique = true, length = 14)
     private String cnpj;
 
-    @Column(length = 100)
+    @Column(name = "email_fornecedor",length = 100)
     private String email;
 
-    @Column(length = 20)
+    @Column(name = "telefone_fornecedor",length = 20)
     private String telefone;
 
     public Fornecedor(FornecedorDto dto) {

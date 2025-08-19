@@ -34,7 +34,7 @@ public class FornecedorService {
 
 
 
-    // Buscar por ID
+
     public Fornecedor buscarPorId(Long id) {
         return fornecedorRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Fornecedor não encontrada com ID: " + id));
@@ -73,6 +73,12 @@ public class FornecedorService {
 
         return fornecedorRepository.saveAndFlush(fornecedorAtualizado);
     }
+
+    public Fornecedor buscarPorCnpj(String cnpj) {
+        return fornecedorRepository.findByCnpj(cnpj)
+                .orElseThrow(() -> new RuntimeException("Fornecedor não encontrado com CNPJ: " + cnpj));
+    }
+
 
 
 }

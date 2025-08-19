@@ -10,22 +10,23 @@ import lombok.*;
 @Setter
 @Builder
 @Entity
-@Table(name = "TAB_CLIENTE")
+@Table(name = "TDS_TB_CLIENTE")
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_cliente")
     private Long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "nome_cliente",nullable = false, length = 100)
     private String nome;
 
-    @Column(nullable = false, unique = true, length = 11)
+    @Column(name = "cpf_cliente", nullable = false, unique = true, length = 11)
     private String cpf;
 
-    @Column(length = 100)
+    @Column(name = "email_cliente",length = 100)
     private String email;
 
-    @Column(length = 20)
+    @Column(name = "telefone_cliente",length = 20)
     private String telefone;
 
     public Cliente(ClienteDto dto) {

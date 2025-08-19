@@ -36,13 +36,13 @@ public class ClienteService {
 
 
 
-    // Buscar por ID
+
     public Cliente buscarPorId(Long id) {
         return clienteRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrada com ID: " + id));
     }
 
-    // Atualizar
+
     public Cliente update(Long id, ClienteDto dto) {
         Cliente existente = buscarPorId(id);
         existente.setNome(dto.nome());
@@ -76,4 +76,11 @@ public class ClienteService {
 
         return clienteRepository.saveAndFlush(clienteAtualizado);
     }
+
+
+    public Cliente buscarPorCpf(String cpf) {
+        return clienteRepository.findByCpf(cpf)
+                .orElseThrow(() -> new RuntimeException("Cliente não encontrado com CPF: " + cpf));
+    }
+
 }
