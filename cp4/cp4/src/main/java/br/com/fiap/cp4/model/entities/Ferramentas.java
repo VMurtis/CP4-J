@@ -11,7 +11,7 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "TDS_TB_FERRAMENTA")
-@SequenceGenerator(name = "abrigo", sequenceName = "SQ_TAB_FERRAMENTA", allocationSize = 1)
+@SequenceGenerator(name = "ferramenta", sequenceName = "SQ_TAB_FERRAMENTA", allocationSize = 1)
 public class Ferramentas {
 
     @Id

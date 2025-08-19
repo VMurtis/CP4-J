@@ -11,9 +11,10 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "TDS_TB_CLIENTE")
+@SequenceGenerator(name = "cliente", sequenceName = "SQ_TDS_TB_CLIENTE", allocationSize = 1)
 public class Cliente {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "cliente")
     @Column(name = "id_cliente")
     private Long id;
 

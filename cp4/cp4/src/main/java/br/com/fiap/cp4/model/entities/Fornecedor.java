@@ -5,16 +5,18 @@ import jakarta.persistence.*;
 import jdk.jshell.Snippet;
 import lombok.*;
 
-@Entity
-@Table(name = "TDS_TB_FORNECEDOR")
+
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Entity
+@Table(name = "TDS_TB_FORNECEDOR")
+@SequenceGenerator(name = "fornecedor", sequenceName = "SQ_TDS_TB_FORNECEDOR", allocationSize = 1)
 public class Fornecedor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "fornecedor")
     private Long id;
 
     @Column(name = "nome_fornecedor", nullable = false, length = 100)
