@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: cp4-api
+    env: java
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/cp4-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: JAVA_VERSION
+        value: 21
+      - key: PORT
+        value: 8080
